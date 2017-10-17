@@ -1,0 +1,9 @@
+<div class="layout" *ngIf="appUser else loading">
+    <navbar [app-user]="appUser"></navbar>
+    <div class="container-fluid animated fadeInUp">
+        <router-outlet></router-outlet>
+    </div>
+</div>
+<ng-template #loading>
+    <loader></loader>
+</ng-template>

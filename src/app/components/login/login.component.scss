@@ -1,0 +1,36 @@
+.pull-left {
+  margin-top: 3px;
+}
+
+.login-form {
+  padding: 17px;
+  border-radius: 0;
+  box-shadow: 3px 3px 3px -2px #ccc; 
+}
+
+.icon-size {
+  font-size: 100px;
+}
+
+.form-control:focus {
+  color: #222;
+  border-color: #444;
+}
+
+.form-control {
+  border-radius: 0;
+}
+
+.bg-fb {
+  background-color: #3B5998;
+  color: #fff;
+  border-color: #3B5998;
+  &:focus {
+    box-shadow: 0 0 0 3px rgba(0,123,255,.25);;
+  }
+  &:hover {
+    background-color: #3B59cc;
+    color: #fff;
+    border-color: #3B59cc;
+  }
+}

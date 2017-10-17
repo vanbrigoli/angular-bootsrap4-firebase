@@ -1,0 +1,30 @@
+<div class="container" *ngIf="!triggerLoading else loading">
+    <div class="row justify-content-center align-items-center">
+      <div class="col-sm-4 border login-form animated fadeInLeft">
+          <div class="text-center icon-size">
+              <i class="fa fa-unlock-alt text-dark"></i>
+          </div>
+          <button (click)="loginFb()" class="btn bg-fb btn-block">
+              <i class="fa fa-facebook pull-left" aria-hidden="true"></i>
+                Login with Facebook
+              </button>
+          <button (click)="loginGoogle()" class="btn btn-danger btn-block">
+              <i class="fa fa-google pull-left" aria-hidden="true"></i>
+                Login with Google
+            </button>
+            <button class="btn btn-light btn-block" routerLink="/email">
+                <i class="fa fa-envelope pull-left" aria-hidden="true"></i>
+                Login with Email
+            </button>
+            <hr class="hr-text" data-content="Don't have an account?">
+            <button class="btn btn-info btn-block" routerLink="/signup">
+                <i class="fa fa-user-plus pull-left" aria-hidden="true"></i>
+                Sign up here
+            </button>
+        </div>
+      </div>
+    </div>
+<ng-template #loading> 
+    <loader></loader>
+</ng-template>
+

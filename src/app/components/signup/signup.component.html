@@ -1,0 +1,37 @@
+<div class="container" *ngIf="!triggerLoading else loading">
+  <div class="row justify-content-center align-items-center">
+    <div class="col-sm-4 border signup-form animated fadeInRight">
+        <button class="btn btn-light" routerLink="/login">Go back</button>
+        <div class="text-center icon-size">
+            <i class="fa fa-user-plus text-dark"></i>
+        </div>
+        <hr class="hr-text" data-content="Register">
+        <form #formData="ngForm" (ngSubmit)="onSubmit(formData)">
+            <div class="form-group">
+              <label for="email" class="font-weight-bold text-dark">Email</label>
+              <input type="email" name="email" [(ngModel)]="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="What's your email?" required>
+            </div>
+            <div class="form-group">
+              <label for="password" class="font-weight-bold text-dark">Password</label>
+              <input type="password" name="password" (ngModel)="password" class="form-control" id="password" placeholder="Choose a password" required>
+            </div>
+            <div class="form-group">
+                <label for="confirmPassword" class="font-weight-bold text-dark">Confirm Password</label>
+                <input type="password" name="confirmPassword" (ngModel)="confirmPassword" class="form-control" id="password" placeholder="Retype password" required>
+              </div>
+            <div class="alert alert-info text-center" role="alert" *ngIf="!validatePasswords(formData)">
+              Password does not match.
+            </div>
+            <div class="alert alert-info text-center" role="alert" *ngIf="errMessage">
+              {{errMessage}}
+            </div>
+            <button type="submit" class="btn btn-danger btn-block" [disabled]="!isFormValid(formData)">
+              Register
+            </button>
+          </form>
+      </div>
+    </div>
+  </div>
+  <ng-template #loading> 
+    <loader></loader>
+  </ng-template>
